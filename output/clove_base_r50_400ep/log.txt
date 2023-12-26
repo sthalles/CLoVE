@@ -1,0 +1,270 @@
+[12/26 13:26:14] contrast INFO: Full config saved to ./output/clove_base_r50_400ep/config.json
+[12/26 13:26:14] contrast INFO: ann_file: 
+arch: resnet50
+attn_drop: 0.0
+attn_temp: 0.2
+aug: BYOL
+auto_resume: False
+base_learning_rate: 0.03
+batch_size: 256
+cache_mode: no
+clove_attn_heads: 8
+clove_momentum: 0.99
+clove_pos_ratio: 0.7
+crop: 0.2
+data_dir: /home/thalles.silva/representation-learning/datasets/ILSVRC2012/
+dataset: ImageNet
+epochs: 100
+feature_dim: 256
+grad_accumulation_steps: 1
+head_type: mlp_head
+image_size: 224
+lamb: 2
+local_crops_number: 0
+local_rank: 0
+lr_decay_epochs: [120, 160, 200]
+lr_decay_rate: 0.1
+lr_scheduler: cosine
+model: CLoVE
+momentum: 0.9
+num_workers: 8
+optimizer: sgd
+output_dir: ./output/clove_base_r50_400ep
+pretrained_model: 
+print_freq: 400
+resume: 
+save_freq: 10
+start_epoch: 1
+warmup_epoch: 5
+warmup_multiplier: 100
+weight_decay: 0.0001
+zip: False
+[12/26 13:26:18] contrast INFO: length of training dataset: 1281167
+[12/26 13:26:18] contrast INFO: global learning rate: 0.03
+[12/26 14:10:06] contrast INFO: Full config saved to ./output/clove_base_r50_400ep/config.json
+[12/26 14:10:06] contrast INFO: ann_file: 
+arch: resnet50
+attn_drop: 0.0
+attn_temp: 0.2
+aug: BYOL
+auto_resume: False
+base_learning_rate: 0.03
+batch_size: 256
+cache_mode: no
+clove_attn_heads: 8
+clove_momentum: 0.99
+clove_pos_ratio: 0.7
+crop: 0.2
+data_dir: /home/thalles.silva/representation-learning/datasets/ILSVRC2012/
+dataset: ImageNet
+epochs: 100
+feature_dim: 256
+grad_accumulation_steps: 1
+head_type: mlp_head
+image_size: 224
+lamb: 2
+local_crops_number: 0
+local_rank: 0
+lr_decay_epochs: [120, 160, 200]
+lr_decay_rate: 0.1
+lr_scheduler: cosine
+model: CLoVE
+momentum: 0.9
+num_workers: 8
+optimizer: sgd
+output_dir: ./output/clove_base_r50_400ep
+pretrained_model: 
+print_freq: 400
+resume: 
+save_freq: 10
+start_epoch: 1
+warmup_epoch: 5
+warmup_multiplier: 100
+weight_decay: 0.0001
+zip: False
+[12/26 14:10:10] contrast INFO: length of training dataset: 1281167
+[12/26 14:10:10] contrast INFO: global learning rate: 0.03
+[12/26 14:10:10] contrast INFO: initial learning rate: 0.0003
+[12/26 14:11:11] contrast INFO: Full config saved to ./output/clove_base_r50_400ep/config.json
+[12/26 14:11:11] contrast INFO: ann_file: 
+arch: resnet50
+attn_drop: 0.0
+attn_temp: 0.2
+aug: BYOL
+auto_resume: False
+base_learning_rate: 0.03
+batch_size: 32
+cache_mode: no
+clove_attn_heads: 8
+clove_momentum: 0.99
+clove_pos_ratio: 0.7
+crop: 0.2
+data_dir: /home/thalles.silva/representation-learning/datasets/ILSVRC2012/
+dataset: ImageNet
+epochs: 100
+feature_dim: 256
+grad_accumulation_steps: 1
+head_type: early_return
+image_size: 224
+lamb: 2
+local_crops_number: 0
+local_rank: 0
+lr_decay_epochs: [120, 160, 200]
+lr_decay_rate: 0.1
+lr_scheduler: cosine
+model: CLoVE
+momentum: 0.9
+num_workers: 8
+optimizer: sgd
+output_dir: ./output/clove_base_r50_400ep
+pretrained_model: 
+print_freq: 400
+resume: 
+save_freq: 10
+start_epoch: 1
+warmup_epoch: 5
+warmup_multiplier: 100
+weight_decay: 0.0001
+zip: False
+[12/26 14:11:17] contrast INFO: length of training dataset: 1281167
+[12/26 14:11:17] contrast INFO: global learning rate: 0.00375
+[12/26 14:11:17] contrast INFO: initial learning rate: 3.75e-05
+[12/26 14:11:42] contrast INFO: Train: [1/100][0/40036]  Time 24.010 (24.010)  lr 0.000  loss 100.135 (100.135)
+[12/26 14:12:53] contrast INFO: Train: [1/100][400/40036]  Time 0.481 (0.238)  lr 0.000  loss 100.082 (100.086)
+[12/26 14:13:56] contrast INFO: Full config saved to ./output/clove_base_r50_400ep/config.json
+[12/26 14:13:56] contrast INFO: ann_file: 
+arch: resnet50
+attn_drop: 0.0
+attn_temp: 0.2
+aug: BYOL
+auto_resume: True
+base_learning_rate: 1.0
+batch_size: 32
+cache_mode: no
+clove_attn_heads: 8
+clove_momentum: 0.99
+clove_pos_ratio: 0.7
+crop: 0.2
+data_dir: /home/thalles.silva/representation-learning/datasets/ILSVRC2012/
+dataset: ImageNet
+epochs: 200
+feature_dim: 256
+grad_accumulation_steps: 1
+head_type: early_return
+image_size: 224
+lamb: 2
+local_crops_number: 0
+local_rank: 0
+lr_decay_epochs: [120, 160, 200]
+lr_decay_rate: 0.1
+lr_scheduler: cosine
+model: CLoVE
+momentum: 0.9
+num_workers: 8
+optimizer: lars
+output_dir: ./output/clove_base_r50_400ep
+pretrained_model: 
+print_freq: 400
+resume: 
+save_freq: 10
+start_epoch: 1
+warmup_epoch: 5
+warmup_multiplier: 100
+weight_decay: 2e-05
+zip: False
+[12/26 14:14:00] contrast INFO: length of training dataset: 1281167
+[12/26 14:14:00] contrast INFO: global learning rate: 0.125
+[12/26 14:14:00] contrast INFO: initial learning rate: 0.00125
+[12/26 14:14:01] contrast INFO: no checkpoint found in ./output/clove_base_r50_400ep, ignoring auto resume
+[12/26 14:14:06] contrast INFO: Train: [1/200][0/40036]  Time 5.411 (5.411)  lr 0.001  loss 100.135 (100.135)
+[12/26 14:15:19] contrast INFO: Full config saved to ./output/clove_base_r50_400ep/config.json
+[12/26 14:15:19] contrast INFO: ann_file: 
+arch: resnet50
+attn_drop: 0.0
+attn_temp: 0.2
+aug: BYOL
+auto_resume: True
+base_learning_rate: 1.0
+batch_size: 32
+cache_mode: no
+clove_attn_heads: 8
+clove_momentum: 0.99
+clove_pos_ratio: 0.7
+crop: 0.2
+data_dir: /home/thalles.silva/representation-learning/datasets/ILSVRC2012/
+dataset: ImageNet
+epochs: 200
+feature_dim: 256
+grad_accumulation_steps: 1
+head_type: early_return
+image_size: 224
+lamb: 2.0
+local_crops_number: 0
+local_rank: 0
+lr_decay_epochs: [120, 160, 200]
+lr_decay_rate: 0.1
+lr_scheduler: cosine
+model: CLoVE
+momentum: 0.9
+num_workers: 8
+optimizer: lars
+output_dir: ./output/clove_base_r50_400ep
+pretrained_model: 
+print_freq: 400
+resume: 
+save_freq: 10
+start_epoch: 1
+warmup_epoch: 5
+warmup_multiplier: 100
+weight_decay: 2e-05
+zip: False
+[12/26 14:15:22] contrast INFO: length of training dataset: 1281167
+[12/26 14:15:22] contrast INFO: global learning rate: 0.125
+[12/26 14:15:23] contrast INFO: initial learning rate: 0.00125
+[12/26 14:15:24] contrast INFO: no checkpoint found in ./output/clove_base_r50_400ep, ignoring auto resume
+[12/26 14:16:03] contrast INFO: Full config saved to ./output/clove_base_r50_400ep/config.json
+[12/26 14:16:03] contrast INFO: ann_file: 
+arch: resnet50
+attn_drop: 0.0
+attn_temp: 0.2
+aug: BYOL
+auto_resume: True
+base_learning_rate: 1.0
+batch_size: 32
+cache_mode: no
+clove_attn_heads: 8
+clove_momentum: 0.99
+clove_pos_ratio: 0.7
+crop: 0.2
+data_dir: /home/thalles.silva/representation-learning/datasets/ILSVRC2012/
+dataset: ImageNet
+epochs: 200
+feature_dim: 256
+grad_accumulation_steps: 2
+head_type: early_return
+image_size: 224
+lamb: 2.0
+local_crops_number: 0
+local_rank: 0
+lr_decay_epochs: [120, 160, 200]
+lr_decay_rate: 0.1
+lr_scheduler: cosine
+model: CLoVE
+momentum: 0.9
+num_workers: 8
+optimizer: lars
+output_dir: ./output/clove_base_r50_400ep
+pretrained_model: 
+print_freq: 400
+resume: 
+save_freq: 10
+start_epoch: 1
+warmup_epoch: 5
+warmup_multiplier: 100
+weight_decay: 2e-05
+zip: False
+[12/26 14:16:08] contrast INFO: length of training dataset: 1281167
+[12/26 14:16:08] contrast INFO: global learning rate: 0.25
+[12/26 14:16:08] contrast INFO: initial learning rate: 0.0025
+[12/26 14:16:10] contrast INFO: no checkpoint found in ./output/clove_base_r50_400ep, ignoring auto resume
+[12/26 14:16:15] contrast INFO: Train: [1/200][0/40036]  Time 5.482 (5.482)  lr 0.003  loss 50.069 (50.069)

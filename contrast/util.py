@@ -1,7 +1,6 @@
 import argparse
-
 import torch
-import torch.distributed as dist
+import numpy as np
 
 
 class AverageMeter(object):
@@ -42,27 +41,21 @@ def accuracy(output, target, topk=(1,)):
             correct_k = correct[:k].view(-1).float().sum(0, keepdim=True)
             res.append(correct_k.mul_(100.0 / batch_size))
         return res
+    
+def cosine_scheduler(base_value, final_value, epochs, niter_per_ep, warmup_epochs=0, start_warmup_value=0):
+    warmup_schedule = np.array([])
+    warmup_iters = warmup_epochs * niter_per_ep
+    if warmup_epochs > 0:
+        warmup_schedule = np.linspace(
+            start_warmup_value, base_value, warmup_iters)
 
+    iters = np.arange(epochs * niter_per_ep - warmup_iters)
+    schedule = final_value + 0.5 * \
+        (base_value - final_value) * (1 + np.cos(np.pi * iters / len(iters)))
 
-def dist_collect(x):
-    """ collect all tensor from all GPUs
-    args:
-        x: shape (mini_batch, ...)
-    returns:
-        shape (mini_batch * num_gpu, ...)
-    """
-    x = x.contiguous()
-    out_list = [torch.zeros_like(x, device=x.device, dtype=x.dtype)
-                for _ in range(dist.get_world_size())]
-    dist.all_gather(out_list, x)
-    return torch.cat(out_list, dim=0)
-
-
-def reduce_tensor(tensor):
-    rt = tensor.clone()
-    dist.all_reduce(rt, op=dist.ReduceOp.SUM)
-    rt /= dist.get_world_size()
-    return rt
+    schedule = np.concatenate((warmup_schedule, schedule))
+    assert len(schedule) == epochs * niter_per_ep
+    return schedule
 
 
 class MyHelpFormatter(argparse.MetavarTypeHelpFormatter, argparse.ArgumentDefaultsHelpFormatter):

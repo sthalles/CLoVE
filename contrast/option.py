@@ -75,8 +75,6 @@ def parse_option(stage='pre-train'):
                         default=1e-4 if stage == 'pre-train' else 0, help='weight decay')
     parser.add_argument('--momentum', type=float,
                         default=0.9, help='momentum for SGD')
-    parser.add_argument('--amp-opt-level', type=str, default='O1', choices=['O0', 'O1', 'O2'],
-                        help='mixed precision opt level, if O0, no amp is used')
     parser.add_argument('--start-epoch', type=int,
                         default=1, help='used for resume')
     parser.add_argument('--epochs', type=int, default=100,
@@ -93,13 +91,11 @@ def parse_option(stage='pre-train'):
                         default=400, help='print frequency')
     parser.add_argument('--save-freq', type=int,
                         default=10, help='save frequency')
-    parser.add_argument("--local_rank", type=int,
-                        help='local rank for DistributedDataParallel')
     if stage == 'linear':
         parser.add_argument('--pretrained-model', type=str,
                             required=True, help="pretrained model path")
         parser.add_argument(
-            '-e', '--eval', action='store_true', help='only evaluate')
+            '-e', '--eval', action='store-true', help='only evaluate')
     else:
         parser.add_argument('--pretrained-model', type=str,
                             default="", help="pretrained model path")
